@@ -1,6 +1,9 @@
 # vim_tmux_zsh
 * fast way to recover my ubuntu working environment: vim + tmux + zsh
-* run `bash installWorkingEnv.sh`
+* install
+    - `sudo apt-get install vim tmux zsh`
+    - `bash installWorkingEnv.sh`
+    - `sudo chsh --shell=/bin/zsh <userName>`  # set zsh as default
 
 ![](2018-05-12.png?raw=true "Title")
 
