@@ -1,5 +1,6 @@
 # vim_tmux_zsh
-fast way to recover my ubuntu working environment: vim + tmux + zsh
+* fast way to recover my ubuntu working environment: vim + tmux + zsh
+* run `bash installWorkingEnv.sh`
 
 ![](2018-05-12.png?raw=true "Title")
 
@@ -17,8 +18,12 @@ fast way to recover my ubuntu working environment: vim + tmux + zsh
     - first step to master vim: run `vimtutor` in terminal (not in vim).
 
 ## tmux:
-* change the bind key from `<ctrl>+b` to `<alt>+m` (easier for me)
+* change the `<bind key>` from `<ctrl>+b` to `<alt>+m` (easier for me)
 * set to vi mode (can search / scroll / move use vi shortcuts)
+* short-cuts you must know:
+    - `<bind key> + c/x` create/delete new session
+    - `<bind key> + <session index> / l` jump to specific / previous session
+    - `<bind key> + d` detach from the current sessions. Attach the existing sessions: `tmux attach`
 
 ## zsh:
 * use a custome-built scheme based on "kphoen" with 2-line layout, like:
