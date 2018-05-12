@@ -1,0 +1,77 @@
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'vimwiki/vimwiki'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'VimIM'
+Plugin 'ervandew/supertab'
+"Plugin 'rdnetto/ycm-generator'
+"Plugin 'valloric/youcompleteme'
+Plugin 'luochen1990/rainbow'
+Plugin 'mrtazz/simplenote.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+
+
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+Bundle 'dhruvasagar/vim-table-mode'
+" All of your Plugins must be added before the following line
+" Don't forget to install the plugin - `:source %` `:PluginInstall`.
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+au BufNewFile,BufRead *.py "give you the standard four spaces when you hit tab
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+    \ set encoding=utf-8
+
+" can use :vnew + :diffthis to replace this DiffOrig
+" command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis 
+
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+set number
+set relativenumber
+set hlsearch
+set background=dark
+" Without them Vimwiki will not work properly.
+let g:vimwiki_list = [{'path': '~/working/mywiki', 'path_html': '~/working/mywiki_html'}]  " solve: Vimwiki Error: Unable to resolve link!
+set nocompatible
+set foldmethod=indent
+filetype plugin on
+syntax on
+
+colorscheme default  "otherwise [Error] for `vim-indent-guides`: highlight group not found: Normal
+" highlight, change after the set of colorscheme
+hi VimwikiBold term=bold ctermfg=Cyan guifg=#80a0ff gui=bold
+
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
+"vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1  "to have indent guides enabled by default
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black "dark
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=4 "blue
+
