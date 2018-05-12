@@ -1,6 +1,8 @@
 # vim_tmux_zsh
 fast way to recover my ubuntu working environment: vim + tmux + zsh
 
+![](2018-05-12.png?raw=true "Title")
+
 ## vim:
 * install vundle, which manage all the plugins
     - 'vimwiki/vimwiki' 'scrooloose/nerdtree' 'tpope/vim-fugitive' 'VimIM' 'ervandew/supertab' 'rdnetto/ycm-generator' 'valloric/youcompleteme' 'luochen1990/rainbow' 'mrtazz/simplenote.vim' 'nathanaelkane/vim-indent-guides'
