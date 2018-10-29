@@ -18,6 +18,7 @@ Plugin 'VimIM'
 Plugin 'ervandew/supertab'
 "Plugin 'rdnetto/ycm-generator'
 "Plugin 'valloric/youcompleteme'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'luochen1990/rainbow'
 Plugin 'mrtazz/simplenote.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -58,6 +59,7 @@ set background=dark
 let g:vimwiki_list = [{'path': '~/working/mywiki', 'path_html': '~/working/mywiki_html'}]  " solve: Vimwiki Error: Unable to resolve link!
 set nocompatible
 set foldmethod=indent
+set mouse=a
 filetype plugin on
 syntax on
 
