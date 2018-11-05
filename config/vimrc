@@ -77,3 +77,14 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black "dark
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=4 "blue
 
+" tab navigation: Alt or Ctrl+Shift may not work in terminal                                                                                                           │····································
+" Use H and L to move to the previous/next tabpage.                                                                                                                    │····································
+nnoremap H gT                                                                                                                                                          │····································
+nnoremap L gt                                                                                                                                                          │····································
+" Tab navigation like Firefox: only 'open new tab' works in terminal                                                                                                   │····································
+nnoremap <C-t>     :tabnew<CR>                                                                                                                                         │····································
+inoremap <C-t>     <Esc>:tabnew<CR>                                                                                                                                    │····································
+" Go/Toggle to the last active tab                                                                                                                                               │····································
+au TabLeave * let g:lasttab = tabpagenr()                                                                                                                              │····································
+nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>                                                                                                                     │····································
+vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
