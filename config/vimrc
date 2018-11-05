@@ -32,7 +32,7 @@ Bundle 'dhruvasagar/vim-table-mode'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-au BufNewFile,BufRead *.py "give you the standard four spaces when you hit tab
+au BufNewFile,BufRead *.py "give you t move to the previous/next tabpage.he standard four spaces when you hit tab
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
@@ -77,14 +77,16 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black "dark
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=4 "blue
 
-" tab navigation: Alt or Ctrl+Shift may not work in terminal                                                                                                           │····································
-" Use H and L to move to the previous/next tabpage.                                                                                                                    │····································
-nnoremap H gT                                                                                                                                                          │····································
-nnoremap L gt                                                                                                                                                          │····································
-" Tab navigation like Firefox: only 'open new tab' works in terminal                                                                                                   │····································
-nnoremap <C-t>     :tabnew<CR>                                                                                                                                         │····································
-inoremap <C-t>     <Esc>:tabnew<CR>                                                                                                                                    │····································
-" Go/Toggle to the last active tab                                                                                                                                               │····································
-au TabLeave * let g:lasttab = tabpagenr()                                                                                                                              │····································
-nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>                                                                                                                     │····································
+" tab navigation: Alt or Ctrl+Shift may not work in terminal:
+" http://vim.wikia.com/wiki/Alternative_tab_navigation
+" Tab navigation like Firefox: only 'open new tab' works in terminal
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-t>     <Esc>:tabnew<CR>
+" move to the previous/next tabpage.
+nnoremap <C-j> gT
+nnoremap <C-k> gt
+" Go to last active tab
+au TabLeave * let g:lasttab = tabpagenr()
+nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+
