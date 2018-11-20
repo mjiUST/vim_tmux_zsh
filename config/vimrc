@@ -90,3 +90,11 @@ au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 
+" F2 - save file; F3 - quit file
+nmap <F2> :update<CR>
+vmap <F2> <Esc><F2>gv
+imap <F2> <c-o><F2>
+nmap <F3> :q<CR>
+vmap <F3> <Esc><F3>gv
+imap <F3> <c-o><F3>
+
